@@ -1,0 +1,18 @@
+오브젝트 움직이기
+
+물체 이동 방법
+    void Update()
+    {
+        /*MoveTowards 단순 등속 운동*/
+        transform.position = Vector3.MoveTowards(transform.position,target,2f);
+
+        /*SmoothDamp 미끄러지듯이 감속 이동*/
+        Vector3 velo = Vector3.zero;
+         transform.position = Vector3.SmoothDamp(transform.position, target, ref velo, 2f);
+
+        /*Lerp 선형 보간 이동*/
+        transform.position = Vector3.Lerp(transform.position, target, 0.005f);
+
+        /*SLerp 구면 선형 보간 이동*/
+        transform.position = Vector3.Slerp(transform.position, target, 0.005f);
+    }

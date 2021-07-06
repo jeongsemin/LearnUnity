@@ -16,3 +16,28 @@
         /*SLerp 구면 선형 보간 이동*/
         transform.position = Vector3.Slerp(transform.position, target, 0.005f);
     }
+
+물체에 작용하는 힘
+
+RigidBody(중력) : 물리 효과를 받기 위한 컴포넌트
+Mass : 수치가 높아질수록 충돌이 무거워짐 -> 질량
+Use Gravity : 중력을 받을지 결정
+Is Kinematic : 외부 물리 효과를 무시
+Is Kinematic 으로 움직이는 함정을 만들 때 유용
+
+Collider(충돌) : 물리 효과를 받기 위한 컴포넌트
+
+Material : 오브젝트의 표면 재질을 결정하는 컴포넌트
+Metalic : 금속 재질 수치
+Smoothness : 빛 반사 수치
+Texture : 재질에 들어가는 이미지
+Tiling : 텍스쳐 반복 타일 갯수
+Emission : 텍스쳐 발광 조절
+
+Physical Material : 탄성과 마찰을 다루는 물리적인 재질
+Bounciness : 탄성력, 높을수록 많이 튀어오름
+Bounciness Combine : 다음 탄성을 계산하는 방식
+Friction : 마찰력, 낮을수록 많이 미끄러짐
+Friction Combine : 다음 마찰력을 계산하는 방식
+
+물체 필수 요소 : Mesh, Material, Collider, RigidBody
